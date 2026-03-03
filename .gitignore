@@ -3,3 +3,5 @@ samples/
 *.env
 **/.env
 __pycache__/
+output/
+*.png
