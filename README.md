@@ -57,6 +57,10 @@ With options:
 Run directly without the OpenCode command:
 
 ```bash
+# 1. Optionally use the helper script (recommended)
+#    This still expects narratives.json to exist in the output folder.
+./scripts/generate-insights-report.sh --days 14
+
 # 1. Collect metrics
 python3 src/collector.py --days 14 -o output/raw_metrics.json
 
@@ -77,6 +81,15 @@ python3 src/generator.py -i output/report_data.json -o output/report.html
 open output/report.html  # macOS
 xdg-open output/report.html  # Linux
 ```
+
+#### Optional helper script output
+
+- Script: `scripts/generate-insights-report.sh`
+- Creates/updates:
+  - `output/raw_metrics.json`
+  - `output/report_data.json`
+  - `output/report.html`
+- Keeps manual control over `--days`, `--project`, and `--narratives` paths.
 
 ## How It Works
 
