@@ -3,7 +3,7 @@ set -euo pipefail
 
 INSTALL_DIR="${HOME}/.local/share/opencode-insights"
 COMMAND_DIR="${HOME}/.config/opencode/command"
-REPO_URL="https://github.com/ysleeInGit/OpenCodeInsights.git"
+REPO_URL="https://github.com/rapidrabbit76/OpenCodeInsights.git"
 
 # Colors
 RED='\033[0;31m'

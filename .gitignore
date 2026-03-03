@@ -5,3 +5,4 @@ samples/
 __pycache__/
 output/
 *.png
+!docs/*.png

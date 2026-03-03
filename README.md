@@ -1,7 +1,19 @@
 # OpenCodeInsights
 
-Usage analytics report generator for [OpenCode](https://github.com/nicholascostadev/opencode).
-Produces an interactive HTML report — same format as Claude Code's `/insights`.
+A custom `/insights` command for [OpenCode](https://github.com/nicholascostadev/opencode) that generates
+an interactive HTML analytics report from your session history — same format as Claude Code's `/insights`.
+
+<p align="center">
+  <img alt="OpenCode Insights Report" src="docs/preview-light.png" width="720">
+</p>
+
+<details>
+<summary>Dark mode preview</summary>
+<br>
+<p align="center">
+  <img alt="OpenCode Insights Report — Dark Mode" src="docs/preview-dark.png" width="720">
+</p>
+</details>
 
 ## What It Shows
 
@@ -19,7 +31,7 @@ Produces an interactive HTML report — same format as Claude Code's `/insights`
 ## Install
 
 ```bash
-curl -sL https://raw.githubusercontent.com/ysleeInGit/OpenCodeInsights/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/rapidrabbit76/OpenCodeInsights/main/install.sh | bash
 ```
 
 This single command will:
@@ -30,7 +42,7 @@ This single command will:
 ### Manual Install
 
 ```bash
-git clone https://github.com/ysleeInGit/OpenCodeInsights.git ~/.local/share/opencode-insights
+git clone https://github.com/rapidrabbit76/OpenCodeInsights.git ~/.local/share/opencode-insights
 cp ~/.local/share/opencode-insights/insights.md ~/.config/opencode/command/insights.md
 echo 'export OPENCODE_INSIGHTS_HOME="$HOME/.local/share/opencode-insights"' >> ~/.zshrc
 ```
