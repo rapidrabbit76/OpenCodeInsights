@@ -1,0 +1,4 @@
+.sisyphus/
+samples/
+*.env
+**/.env
