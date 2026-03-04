@@ -31,8 +31,8 @@
   ],
   "author": "rapidrabbit76",
   "license": "MIT",
-  "dependencies": {
-    "@opencode-ai/plugin": "1.2.15"
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
