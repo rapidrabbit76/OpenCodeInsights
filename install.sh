@@ -57,8 +57,8 @@ info "Output directory ready"
 
 # 5. Register OpenCode command
 mkdir -p "$COMMAND_DIR"
-cp "${INSTALL_DIR}/insights.md" "${COMMAND_DIR}/insights.md"
-info "Registered /insights command"
+sed "s|{{INSIGHTS_HOME}}|${INSTALL_DIR}|g" "${INSTALL_DIR}/insights.md" > "${COMMAND_DIR}/insights.md"
+info "Registered /insights command (paths resolved)"
 
 # 6. Set environment variable in shell rc
 ENV_LINE="export OPENCODE_INSIGHTS_HOME=\"${INSTALL_DIR}\""

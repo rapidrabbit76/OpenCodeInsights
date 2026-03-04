@@ -30,14 +30,32 @@ an interactive HTML analytics report from your session history — same format a
 
 ## Install
 
+### Plugin Install (Recommended)
+
+Add `opencode-insights` to your `opencode.json`:
+
+```jsonc
+// ~/.config/opencode/opencode.json
+{
+  "plugin": ["opencode-insights"]
+}
+```
+
+Then install the package:
+
+```bash
+cd ~/.config/opencode && npm install opencode-insights
+```
+
+That's it. The `/insights` command and tools (`insights_collect`, `insights_generate`) are registered automatically.
+
+### Script Install
+
 ```bash
 curl -sL https://raw.githubusercontent.com/rapidrabbit76/OpenCodeInsights/main/install.sh | bash
 ```
 
-This single command will:
-- Install the code to `~/.local/share/opencode-insights/`
-- Register the `/insights` command in OpenCode
-- Add `OPENCODE_INSIGHTS_HOME` to your shell rc
+This will clone to `~/.local/share/opencode-insights/`, register the `/insights` command, and set `OPENCODE_INSIGHTS_HOME` in your shell rc.
 
 ### Manual Install
 
@@ -130,13 +148,17 @@ Narratives (analysis, summaries, recommendations) are written by the LLM based o
 
 ## Configuration
 
-### Environment Variables
+### Plugin Mode
+
+No configuration needed. Paths are resolved automatically at runtime.
+
+### Script / Manual Mode
+
+#### Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `OPENCODE_INSIGHTS_HOME` | Installation path of this project | Auto-detected under `$HOME` (4 levels deep) |
-
-Example:
 
 ```bash
 # Add to .bashrc or .zshrc
@@ -169,12 +191,16 @@ python3 src/generator.py [options]
 
 ```
 OpenCodeInsights/
+├── index.ts           # Plugin entry point (registers command + tools)
+├── package.json       # npm package config
+├── tsconfig.json      # TypeScript build config
+├── dist/              # Compiled plugin (built by tsc)
 ├── src/
-│   ├── collector.py    # Metrics collector (SQLite → JSON)
-│   └── generator.py    # HTML report generator (JSON → HTML)
-├── output/             # Generated files (gitignored)
-├── insights.md         # OpenCode command definition
-├── install.sh          # One-command installer
+│   ├── collector.py   # Metrics collector (SQLite → JSON)
+│   └── generator.py   # HTML report generator (JSON → HTML)
+├── output/            # Generated files (gitignored)
+├── insights.md        # OpenCode command definition
+├── install.sh         # One-command installer (script mode)
 ├── .gitignore
 └── README.md
 ```

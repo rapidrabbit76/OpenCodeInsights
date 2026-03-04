@@ -1,0 +1,41 @@
+{
+  "name": "opencode-insights",
+  "version": "2026.03.04",
+  "description": "OpenCode plugin — generates interactive HTML analytics reports from your session history.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "insights.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapidrabbit76/OpenCodeInsights.git"
+  },
+  "homepage": "https://github.com/rapidrabbit76/OpenCodeInsights#readme",
+  "bugs": {
+    "url": "https://github.com/rapidrabbit76/OpenCodeInsights/issues"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "insights",
+    "analytics"
+  ],
+  "author": "rapidrabbit76",
+  "license": "MIT",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.2.15"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}

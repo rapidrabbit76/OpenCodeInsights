@@ -6,3 +6,6 @@ __pycache__/
 output/
 *.png
 !docs/*.png
+dist/
+node_modules/
+bun.lock

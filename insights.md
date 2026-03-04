@@ -16,12 +16,12 @@ The user may optionally specify:
 - `--project PROJECT_ID` to filter by project
 
 ```bash
-python3 /home/yslee/develop/projects/OpenCodeInsights/src/collector.py --days 14 -o /home/yslee/develop/projects/OpenCodeInsights/output/raw_metrics.json
+python3 {{INSIGHTS_HOME}}/src/collector.py --days 14 -o {{INSIGHTS_HOME}}/output/raw_metrics.json
 ```
 
 Read the output file to understand the raw data:
 ```bash
-cat /home/yslee/develop/projects/OpenCodeInsights/output/raw_metrics.json
+cat {{INSIGHTS_HOME}}/output/raw_metrics.json
 ```
 
 ## Step 2: Analyze and Generate Narratives
@@ -35,7 +35,7 @@ Read the raw metrics JSON carefully. You must generate AI narrative content by a
 
 ### Write the narratives JSON file
 
-Create `/home/yslee/develop/projects/OpenCodeInsights/output/narratives.json` with this EXACT structure:
+Create `{{INSIGHTS_HOME}}/output/narratives.json` with this EXACT structure:
 
 ```json
 {
@@ -186,22 +186,22 @@ Merge the raw metrics and narratives into a single report data file:
 ```python
 import json
 
-metrics = json.load(open('/home/yslee/develop/projects/OpenCodeInsights/output/raw_metrics.json'))
-narratives = json.load(open('/home/yslee/develop/projects/OpenCodeInsights/output/narratives.json'))
+metrics = json.load(open('{{INSIGHTS_HOME}}/output/raw_metrics.json'))
+narratives = json.load(open('{{INSIGHTS_HOME}}/output/narratives.json'))
 
 report_data = {
     "metrics": metrics,
     "narratives": narratives
 }
 
-with open('/home/yslee/develop/projects/OpenCodeInsights/output/report_data.json', 'w') as f:
+with open('{{INSIGHTS_HOME}}/output/report_data.json', 'w') as f:
     json.dump(report_data, f, indent=2, ensure_ascii=False)
 ```
 
 Then generate the HTML report:
 
 ```bash
-python3 /home/yslee/develop/projects/OpenCodeInsights/src/generator.py --input /home/yslee/develop/projects/OpenCodeInsights/output/report_data.json --output /home/yslee/develop/projects/OpenCodeInsights/output/report.html
+python3 {{INSIGHTS_HOME}}/src/generator.py --input {{INSIGHTS_HOME}}/output/report_data.json --output {{INSIGHTS_HOME}}/output/report.html
 ```
 
 ## Step 4: Present Results
