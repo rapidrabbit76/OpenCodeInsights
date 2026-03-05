@@ -54,13 +54,7 @@ Add `opencode-insights` to your `opencode.json`:
 }
 ```
 
-Then install the package:
-
-```bash
-cd ~/.config/opencode && npm install opencode-insights
-```
-
-That's it. The `/insights` command and tools (`insights_collect`, `insights_generate`) are registered automatically.
+That's it. OpenCode automatically installs the plugin and registers the `/insights` command and tools (`insights_collect`, `insights_generate`).
 
 ### Script Install
 
