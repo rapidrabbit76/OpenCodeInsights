@@ -1,6 +1,6 @@
 {
   "name": "opencode-insights",
-  "version": "2026.03.04",
+  "version": "2026.03.06",
   "description": "OpenCode plugin — generates interactive HTML analytics reports from your session history.",
   "type": "module",
   "main": "dist/index.js",
