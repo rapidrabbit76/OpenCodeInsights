@@ -11,6 +11,42 @@ import sys
 from pathlib import Path
 from typing import Any
 
+# ────────────────────── Favicon (32×32 PNG, base64) ──────────────────────────
+FAVICON_B64 = (
+    "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"
+)
+
 # ──────────────────────── CSS (from reference report) ──────────────────────
 CSS = """
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -932,6 +968,7 @@ def generate_report(data: dict) -> str:
   <meta charset="utf-8">
   <title>OpenCode Insights</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="data:image/png;base64,{FAVICON_B64}">
   <script>
     // Apply theme immediately to prevent flash
     (function() {{
