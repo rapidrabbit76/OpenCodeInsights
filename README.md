@@ -1,17 +1,30 @@
-# OpenCodeInsights
-
-A custom `/insights` command for [OpenCode](https://github.com/nicholascostadev/opencode) that generates
-an interactive HTML analytics report from your session history — same format as Claude Code's `/insights`.
+<p align="center">
+  <img alt="OpenCodeInsights" src="assets/banner_w.webp" width="720">
+</p>
 
 <p align="center">
-  <img alt="OpenCode Insights Report" src="docs/preview-light.png" width="720">
+  <a href="#install"><strong>Install</strong></a> &middot;
+  <a href="#usage"><strong>Usage</strong></a> &middot;
+  <a href="#how-it-works"><strong>How It Works</strong></a> &middot;
+  <a href="#configuration"><strong>Configuration</strong></a>
+</p>
+
+<p align="center">
+  <em>A custom <code>/insights</code> command for <a href="https://github.com/nicholascostadev/opencode">OpenCode</a> that generates<br>
+  an interactive HTML analytics report from your session history — same format as Claude Code's <code>/insights</code>.</em>
+</p>
+
+---
+
+<p align="center">
+  <img alt="OpenCode Insights Report" src="assets/preview-light.webp" width="720">
 </p>
 
 <details>
 <summary>Dark mode preview</summary>
 <br>
 <p align="center">
-  <img alt="OpenCode Insights Report — Dark Mode" src="docs/preview-dark.png" width="720">
+  <img alt="OpenCode Insights Report — Dark Mode" src="assets/preview-dark.webp" width="720">
 </p>
 </details>
 
@@ -191,6 +204,7 @@ python3 src/generator.py [options]
 
 ```
 OpenCodeInsights/
+├── assets/            # Branding assets (banner, logo, favicon)
 ├── index.ts           # Plugin entry point (registers command + tools)
 ├── package.json       # npm package config
 ├── tsconfig.json      # TypeScript build config
